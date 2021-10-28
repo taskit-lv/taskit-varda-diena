@@ -410,12 +410,24 @@
 
     if (el.length) {
         var date = new Date();
-        var mon = date.getMonth();
-        var day = date.getDate() - 1;
+        var mon = '';
+        var day = '';
 
         for (var i = 0; i < el.length; ++i) {
             var item = el[i];
-			item.textContent = getNames();
+            var futureNum = +item.dataset.future;
+            if (futureNum > 0) {
+                var future = new Date(date)
+                future.setDate(future.getDate() + futureNum);
+
+                mon = future.getMonth();
+                day = future.getDate() - 1;
+            } else {
+                mon = date.getMonth();
+                day = date.getDate() - 1;
+            }
+
+            item.textContent = getNames();
         }
     }
 

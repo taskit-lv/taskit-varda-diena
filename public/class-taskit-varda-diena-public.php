@@ -58,10 +58,24 @@ class Taskit_Varda_Diena_Public {
 
 	}
 
-	function shortcode_content() {
-		return '<div class="taskit-varda-diena"></div>';
+	/**
+	 * Register shortcode function
+	 *
+	 * @since    1.0.0
+	 */
+	function shortcode_content( $atts, $content = null ) {
+		$a = shortcode_atts( array(
+			'future' => 0,
+		), $atts );
+
+		return '<div data-future="' . esc_attr($a['future']) . '" class="taskit-varda-diena"></div>';
 	}
 
+	/**
+	 * Init shortcode method
+	 *
+	 * @since    1.0.0
+	 */
 	function init_shortcode() {
 		add_shortcode( 'varda_diena', array( $this, 'shortcode_content' ) );
 	}

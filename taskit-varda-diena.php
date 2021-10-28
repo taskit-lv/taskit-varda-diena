@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Latvijas vārda diena
  * Plugin URI:        https://taskit.lv/user/dedalik/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Latvijas vārda diena for Wordpress
  * Version:           1.0.0
  * Author:            Radiks A.
  * Author URI:        https://taskit.lv/user/dedalik/
